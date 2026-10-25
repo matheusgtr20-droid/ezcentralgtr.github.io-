@@ -1,30 +1,156 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090a10">
-<meta name="description" content="EzCentralGTR: assistente, automações e ferramentas para Android.">
-<title>EzCentralGTR — Seu Android, seu jeito</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0c12">
+<meta name="description" content="Conheça o EzCentralGTR, um projeto Android em constante evolução.">
+<title>EzCentralGTR — Mais possibilidades</title>
 <style>
-:root{--bg:#090a10;--card:#131724;--line:#2b3144;--red:#ff4058;--text:#f5f6fc;--muted:#aab2c5}
-*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0,#3b101d 0,transparent 36%),var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif}
-.wrap{width:min(1080px,calc(100% - 32px));margin:auto}header{position:sticky;top:0;background:#090a10e8;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff15;z-index:2}
-nav{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:900;font-size:21px;text-decoration:none}.brand b{color:var(--red)}.links{display:flex;gap:20px}.links a{color:var(--muted);text-decoration:none;font-size:14px}
-.btn{display:inline-block;padding:13px 17px;border-radius:12px;background:linear-gradient(135deg,var(--red),#ff744c);color:white;text-decoration:none;font-weight:800;border:1px solid #ff657455}.btn.alt{background:#ffffff08;border-color:#ffffff24}.hero{padding:82px 0 66px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
-.tag{color:#ff8796;font-size:12px;letter-spacing:2px;font-weight:900}h1{font-size:clamp(42px,6vw,72px);line-height:1;letter-spacing:-3px;margin:20px 0}h1 span{color:var(--red)}p{color:var(--muted);line-height:1.75}.lead{font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.mock{border:2px solid #50576a;border-radius:34px;padding:12px;max-width:280px;aspect-ratio: .52;margin:auto;background:linear-gradient(145deg,#252a39,#030407);box-shadow:0 25px 80px #0009,0 0 70px #ff405822}.screen{height:100%;border-radius:24px;padding:28px 15px;background:radial-gradient(circle at 70% 10%,#48202c,transparent 40%),#10131e}.screen h2{font-size:25px}.tile,.card{background:#ffffff08;border:1px solid #ffffff17;border-radius:15px;padding:17px;margin:12px 0}.tile{font-size:13px}
-section{scroll-margin-top:86px}.section{padding:58px 0}.section h2{font-size:clamp(29px,4vw,43px);margin:10px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card h3{margin:12px 0 5px}.icon{font-size:25px}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{margin:0;background:linear-gradient(145deg,#171b2a,#10121b);border-color:var(--line)}.card p{font-size:14px}.download{border-color:#783140;background:linear-gradient(135deg,#28111a,#121522)}.pill{font-size:11px;border:1px solid #ff405866;border-radius:99px;padding:7px 10px;color:#ff9ca8}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.detail{padding:12px 0;border-bottom:1px solid #ffffff14;font-size:14px}.detail span{color:var(--muted);display:inline-block;min-width:120px}.disabled{opacity:.55;cursor:not-allowed}.faq details{padding:17px 0;border-bottom:1px solid #ffffff1b}.faq summary{cursor:pointer;font-weight:800}.faq details p{font-size:14px}footer{border-top:1px solid #ffffff17;padding:25px 0;color:#8c95a8;font-size:13px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:740px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.grid,.split{grid-template-columns:1fr}.mock{max-width:235px}h1{letter-spacing:-2px}.section{padding:42px 0}}
-</style></head>
+:root{--bg:#0b0c12;--panel:#141723;--line:#2b3040;--red:#ff4058;--text:#f5f6fa;--muted:#aab1c2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:radial-gradient(ellipse at 80% 0,#39121e,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+a{color:inherit}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:#0b0c12eF;border-bottom:1px solid #ffffff14;backdrop-filter:blur(16px)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-weight:900;font-size:20px;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--red)}
+.links{display:flex;gap:20px}
+.links a{font-size:13px;color:var(--muted);text-decoration:none}
+.links a:hover{color:white}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 17px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.primary{background:linear-gradient(135deg,#ff4058,#ff704c);color:white;box-shadow:0 8px 28px #ff405825}
+.secondary{background:#ffffff08;border-color:#ffffff25}
+.hero{min-height:560px;padding:76px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.tag{color:#ff8796;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(43px,6vw,72px);line-height:1.05;letter-spacing:-3px;margin:17px 0}
+h1 span{color:var(--red)}
+.lead{font-size:17px;color:var(--muted);max-width:620px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.note{font-size:12px;color:#838da2;margin-top:16px}
+.visual{display:grid;place-items:center;min-height:360px;position:relative}
+.visual:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#ff40582a;filter:blur(65px)}
+.phone{position:relative;width:245px;aspect-ratio:.5;padding:10px;border:2px solid #50576a;border-radius:35px;background:linear-gradient(140deg,#252a39,#030407);box-shadow:0 30px 80px #0009;transform:rotate(3deg)}
+.screen{height:100%;padding:26px 14px;border-radius:25px;background:radial-gradient(circle at 80% 5%,#4b1a2a,transparent 38%),#10131e}
+.screen h2{font-size:27px;line-height:1.2}
+.tile{padding:12px;margin:10px 0;background:#ffffff08;border:1px solid #ffffff19;border-radius:12px;font-size:12px}
+.tile small{display:block;color:var(--muted);margin-top:3px}
+section{scroll-margin-top:85px}
+.section{padding:60px 0}
+.section h2{font-size:clamp(30px,4vw,43px);line-height:1.2;letter-spacing:-1.2px;margin:10px 0}
+.intro{max-width:700px;color:var(--muted);margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{padding:23px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(145deg,#171b28,#11131c)}
+.icon{font-size:25px}
+.card h3{margin:12px 0 5px}
+.card p{font-size:14px;color:var(--muted);margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.download{padding:clamp(22px,4vw,34px);border-color:#71303d;background:linear-gradient(135deg,#28121b,#141723)}
+.row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.badge{font-size:11px;font-weight:900;letter-spacing:.5px;color:#ffd19b;border:1px solid #ffbf7355;border-radius:99px;padding:6px 10px}
+.meta{padding:11px 0;border-bottom:1px solid #ffffff15;font-size:14px}
+.meta span{display:inline-block;min-width:125px;color:var(--muted)}
+.warning{font-size:12px;color:#b5a8ae;margin-top:18px}
+.faq details{padding:16px 0;border-bottom:1px solid #ffffff18}
+.faq summary{cursor:pointer;font-weight:750}
+.faq details p{font-size:14px;color:var(--muted)}
+footer{margin-top:25px;border-top:1px solid #ffffff15;color:#8992a6;font-size:12px}
+.foot{padding:25px 0 32px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.links{display:none}.hero{grid-template-columns:1fr;padding:55px 0 35px}.visual{min-height:330px}.phone{width:215px}.grid,.split{grid-template-columns:1fr}.section{padding:45px 0}h1{letter-spacing:-2px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
 <body>
-<header><nav class="wrap"><a class="brand" href="#inicio">⚡ EzCentral<b>GTR</b></a><div class="links"><a href="#recursos">Recursos</a><a href="#sobre">Projeto</a><a href="#download">Download</a><a href="#seguranca">Segurança</a></div><a class="btn" href="#download">Ver download ↘</a></nav></header>
+<header>
+<nav class="wrap">
+<a class="brand" href="#inicio">⚡ EzCentral<span>GTR</span></a>
+<div class="links">
+<a href="#recursos">Recursos</a>
+<a href="#sobre">O projeto</a>
+<a href="#download">Download</a>
+<a href="#faq">Dúvidas</a>
+</div>
+<a class="btn primary" href="#download">Baixar o app ↓</a>
+</nav>
+</header>
+
 <main class="wrap">
-<section class="hero" id="inicio"><div><div class="tag">ANDROID · AUTOMAÇÃO · ASSISTENTE</div><h1>Seu Android.<br><span>Seu jeito de usar.</span></h1><p class="lead">O EzCentralGTR é um projeto em evolução que busca reunir ferramentas, assistência inteligente e automações compatíveis com Android em uma experiência centralizada.</p><div class="actions"><a class="btn" href="#download">⬇ Ver versão do app</a><a class="btn alt" href="#sobre">Conhecer o projeto ↓</a></div><p style="font-size:12px">Projeto independente. Os recursos podem variar conforme a versão, o dispositivo e as permissões concedidas.</p></div>
-<div class="mock" aria-label="Ilustração conceitual do aplicativo"><div class="screen"><div class="tag">EZCENTRAL / HOME</div><h2>Central de<br>controle.</h2><div class="tile">⚡ <b>Automações</b><br><small>Atalhos e ações compatíveis</small></div><div class="tile">🤖 <b>Assistente</b><br><small>Ajuda para usar os recursos</small></div><div class="tile">🛡️ <b>Privacidade</b><br><small>Controle e transparência</small></div></div></div></section>
-<section class="section" id="recursos"><div class="tag">O QUE ESTAMOS CONSTRUINDO</div><h2>Ferramentas em um só lugar.</h2><p>A proposta é tornar ações comuns mais organizadas e acessíveis. A disponibilidade real depende da versão instalada.</p><div class="grid"><article class="card"><div class="icon">⚡</div><h3>Automações</h3><p>Organização de atalhos e ações para reduzir etapas em tarefas compatíveis com Android.</p></article><article class="card"><div class="icon">🤖</div><h3>Assistente inteligente</h3><p>Uma interface para consultar informações e receber orientação sobre o projeto e suas funções.</p></article><article class="card"><div class="icon">🎛️</div><h3>Central personalizável</h3><p>Visual escuro, identidade tecnológica e foco em uma navegação prática.</p></article></div></section>
-<section class="section" id="sobre"><div class="tag">SOBRE O PROJETO</div><h2>Feito para evoluir por versões.</h2><p>O EzCentralGTR é um projeto independente para Android. A ideia é melhorar a centralização de ferramentas e a experiência de uso com atualizações progressivas, testes e documentação clara.</p><div class="split"><article class="card"><h3>Desenvolvimento</h3><p>Novas versões podem incluir mudanças visuais, correções e recursos. Antes de marcar uma versão como estável, é importante testar instalação, fluxos principais e permissões.</p></article><article class="card"><h3>O que você encontra aqui</h3><p>Esta página é o ponto de referência para conhecer o projeto e, quando publicado, baixar versões oficiais com detalhes e notas de atualização.</p></article></div></section>
-<section class="section" id="download"><div class="tag">DOWNLOAD OFICIAL</div><h2>Uma versão verificada, sem surpresas.</h2><div class="card download"><div class="row"><h3>EzCentralGTR para Android</h3><span class="pill">AGUARDANDO TESTES</span></div><p>A compilação foi concluída, mas login Google, sincronização e funções principais ainda precisam ser testados antes de anunciar esta build como lançamento estável.</p><div class="detail"><span>Arquivo</span><b>APK de depuração (a confirmar)</b></div><div class="detail"><span>Compatibilidade</span><b>A confirmar em testes</b></div><div class="detail"><span>Estado</span><b style="color:#ffc28b">Em validação</b></div><p><span class="btn alt disabled" aria-disabled="true">Download ainda não disponível</span></p><p style="font-size:12px">Depois de publicar uma Release no GitHub, troque este botão pelo link direto do APK e atualize versão, data e hash SHA-256 do arquivo real.</p></div></section>
-<section class="section" id="seguranca"><div class="tag">TRANSPARÊNCIA</div><h2>Segurança sem promessas vazias.</h2><div class="grid"><article class="card"><div class="icon">🔏</div><h3>Integridade do APK</h3><p>O hash SHA-256 do arquivo publicado ajuda a conferir se o arquivo recebido corresponde ao que foi disponibilizado.</p></article><article class="card"><div class="icon">🧾</div><h3>Versões claras</h3><p>As publicações devem informar versão, data, correções, novidades e limitações conhecidas.</p></article><article class="card"><div class="icon">🔐</div><h3>Privacidade</h3><p>A política deve explicar quais dados são tratados, por quê, onde são armazenados e como pedir sua exclusão.</p></article></div></section>
-<section class="section faq" id="faq"><div class="tag">DÚVIDAS FREQUENTES</div><h2>Antes de instalar.</h2><details><summary>O aplicativo já está pronto?</summary><p>O projeto compilou, mas isso sozinho não comprova que todos os recursos funcionam. O lançamento deve ser marcado como disponível depois dos testes.</p></details><details><summary>Por que o Android pode pedir permissões?</summary><p>Alguns recursos dependem de permissões específicas. Leia o que cada permissão permite e conceda apenas as necessárias para as funções que pretende usar.</p></details><details><summary>Como saber o que mudou?</summary><p>As publicações devem incluir notas de versão com novidades, correções e limitações conhecidas.</p></details></section>
-</main><footer><div class="wrap foot"><span>© 2026 EzCentralGTR · Projeto independente</span><a href="#inicio">Voltar ao topo ↑</a><span>Feito para evoluir com transparência.</span></div></footer>
-</body></html>
+<section class="hero" id="inicio">
+<div>
+<div class="tag">Tecnologia do seu jeito</div>
+<h1>Mais controle.<br><span>Mais possibilidades.</span></h1>
+<p class="lead">O EzCentralGTR nasceu da vontade de deixar o Android mais prático, personalizável e interessante de usar. A ideia é reunir ferramentas, assistência e automações em um só lugar — e continuar melhorando a cada versão.</p>
+<div class="actions">
+<a class="btn primary" href="#download">⬇ Baixar EzCentralGTR</a>
+<a class="btn secondary" href="#sobre">Conhecer o projeto ↘</a>
+</div>
+<p class="note">Projeto independente para Android · Em desenvolvimento contínuo</p>
+</div>
+<div class="visual" aria-label="Ilustração conceitual do aplicativo">
+<div class="phone"><div class="screen">
+<div class="tag">EZCENTRAL / HOME</div>
+<h2>Tudo no<br>seu ritmo.</h2>
+<div class="tile">⚡ <b>Automações</b><small>Atalhos para o dia a dia</small></div>
+<div class="tile">🤖 <b>Assistente</b><small>Ajuda e orientação</small></div>
+<div class="tile">🎛️ <b>Personalização</b><small>Uma central com a sua cara</small></div>
+</div></div>
+</div>
+</section>
+
+<section class="section" id="recursos">
+<div class="tag">O que você vai encontrar</div>
+<h2>Uma central com espaço para crescer.</h2>
+<p class="intro">A proposta é deixar recursos úteis mais organizados e fáceis de encontrar. O que está disponível pode mudar conforme a versão e as permissões do Android.</p>
+<div class="grid">
+<article class="card"><div class="icon">⚡</div><h3>Atalhos e automações</h3><p>Organize ações compatíveis para chegar mais rápido às funções que você usa.</p></article>
+<article class="card"><div class="icon">🤖</div><h3>Assistente integrado</h3><p>Um espaço para tirar dúvidas e receber orientação sobre o aplicativo e seus recursos.</p></article>
+<article class="card"><div class="icon">🎨</div><h3>Identidade própria</h3><p>Interface escura, detalhes vermelhos e navegação pensada para o celular.</p></article>
+</div>
+</section>
+
+<section class="section" id="sobre">
+<div class="tag">Sobre o EzCentralGTR</div>
+<h2>Feito aos poucos, com vontade de fazer bem feito.</h2>
+<p class="intro">O EzCentralGTR é um projeto independente que está sendo desenvolvido e aprimorado por versões. A intenção é evoluir a experiência sem esconder o que ainda precisa de ajustes.</p>
+<div class="split">
+<article class="card"><h3>Um projeto em evolução</h3><p>Novas versões podem trazer melhorias visuais, correções e recursos. Cada lançamento deve indicar o que mudou e o que ainda está em teste.</p></article>
+<article class="card"><h3>Por que este site existe?</h3><p>Este é o ponto de encontro do projeto: um lugar para conhecer a proposta, encontrar as versões publicadas e acompanhar as novidades do EzCentralGTR.</p></article>
+</div>
+</section>
+
+<section class="section" id="download">
+<div class="tag">Download</div>
+<h2>Quer experimentar?</h2>
+<p class="intro">A versão abaixo está identificada como experimental. Confira as notas da publicação e teste os recursos no seu aparelho.</p>
+<div class="card download">
+<div class="row"><div><div class="tag">EzCentralGTR para Android</div><h3 style="font-size:25px;margin:8px 0 0">Versão 5.0.0</h3></div><span class="badge">PRÉ-LANÇAMENTO</span></div>
+<p style="color:var(--muted)">Uma versão em evolução. Algumas funções, incluindo login e sincronização, precisam ser validadas no dispositivo.</p>
+<div class="meta"><span>Arquivo</span><b>EzCentralGTR.V5.0.0.apk</b></div>
+<div class="meta"><span>Publicação</span><b>GitHub Releases</b></div>
+<div class="meta"><span>Estado</span><b>Experimental</b></div>
+<div class="actions">
+<a class="btn primary" href="https://github.com/matheusgtr20-droid/ezcentralgtr.github.io-/releases/download/v5.0.0/EzCentralGTR.V5.0.0.apk">⬇ Baixar EzCentralGTR 5.0.0</a>
+<a class="btn secondary" href="https://github.com/matheusgtr20-droid/ezcentralgtr.github.io-/releases/tag/v5.0.0" target="_blank" rel="noopener noreferrer">Ver notas da versão ↗</a>
+</div>
+<p class="warning">Se o download não começar, confira se o APK está anexado à Release com esse nome exato. O Android pode pedir confirmação antes de instalar um aplicativo baixado fora da Play Store.</p>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="tag">Dúvidas frequentes</div>
+<h2>Antes de instalar</h2>
+<div class="faq">
+<details><summary>O aplicativo já está totalmente pronto?</summary><p>A compilação foi concluída, mas isso não garante que todos os recursos estejam funcionando. Esta publicação é experimental e precisa ser testada no dispositivo.</p></details>
+<details><summary>Por que o Android pede confirmação?</summary><p>Aplicativos instalados por APK fora da Play Store podem exigir confirmação. Instale apenas arquivos de uma fonte em que você confia.</p></details>
+<details><summary>Como vejo as novidades?</summary><p>Abra a página da versão no GitHub para ler as notas e conferir os arquivos disponibilizados.</p></details>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><span>© 2026 EzCentralGTR · Projeto independente</span><a href="#inicio">Voltar ao início ↑</a><span>Em constante evolução.</span></div></footer>
+</body>
+</html>
